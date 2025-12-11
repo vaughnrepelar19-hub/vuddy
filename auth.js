@@ -23,7 +23,7 @@ export const signup = async (username, email, password) => {
 export const login = async (email, password) => {
   if (!email || !password) return alert("All fields are required.");
   try {
-    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    await signInWithEmailAndPassword(auth, email, password);
 
     // Redirect after login
     window.location.href = "home.html";
@@ -37,4 +37,18 @@ onAuthStateChanged(auth, (user) => {
   if (!user && window.location.pathname.includes("home.html")) {
     window.location.href = "index.html";
   }
+});
+
+// Attach event listeners to buttons
+document.getElementById("signupBtn").addEventListener("click", () => {
+  const username = document.getElementById("signupUsername").value;
+  const email = document.getElementById("signupEmail").value;
+  const password = document.getElementById("signupPassword").value;
+  signup(username, email, password);
+});
+
+document.getElementById("loginBtn").addEventListener("click", () => {
+  const email = document.getElementById("loginEmail").value;
+  const password = document.getElementById("loginPassword").value;
+  login(email, password);
 });
