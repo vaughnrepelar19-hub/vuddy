@@ -6,16 +6,19 @@
   <link rel="stylesheet" href="style.css">
   <script type="module" src="firebase.js"></script>
   <script type="module" src="auth.js"></script>
-  <script type="module" src="posts.js"></script>
+  <script type="module" src="dashboard.js"></script>
 </head>
 <body>
   <div class="container">
-    <h1>Vuddy Feed</h1>
-    <button id="themeToggle" type="button">Toggle Dark/Light Mode</button>
+    <header>
+      <h1>Vuddy Feed</h1>
+      <div id="userbar">Loading...</div>
+    </header>
 
     <div class="post-box">
-      <input type="text" id="postInput" placeholder="What's on your mind?">
-      <button id="postBtn" type="button">Post</button>
+      <select id="newSubj"></select>
+      <input type="text" id="newPostTxt" placeholder="What's on your mind?">
+      <button id="postBtn">Post</button>
     </div>
 
     <div id="feed"></div>
