@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Vuddy Login / Signup</title>
+  <title>Vuddy — Login / Signup</title>
   <link rel="stylesheet" href="style.css">
   <script type="module" src="firebase.js"></script>
   <script type="module" src="auth.js"></script>
@@ -28,5 +28,22 @@
       <button id="loginBtn" type="button">Login</button>
     </div>
   </div>
+
+  <script type="module">
+    import { signup, login } from './auth.js';
+
+    document.getElementById('signupBtn').onclick = () => {
+      const u = document.getElementById('signupUsername').value;
+      const e = document.getElementById('signupEmail').value;
+      const p = document.getElementById('signupPassword').value;
+      signup(u, e, p);
+    };
+
+    document.getElementById('loginBtn').onclick = () => {
+      const e = document.getElementById('loginEmail').value;
+      const p = document.getElementById('loginPassword').value;
+      login(e, p);
+    };
+  </script>
 </body>
 </html>
