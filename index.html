@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Vuddy Login / Signup</title>
@@ -7,6 +8,7 @@
   <script type="module" src="firebase.js"></script>
   <script type="module" src="auth.js"></script>
 </head>
+
 <body>
   <div class="container">
     <h1>Vuddy</h1>
@@ -17,9 +19,7 @@
       <input type="text" id="signupUsername" placeholder="Username">
       <input type="email" id="signupEmail" placeholder="Email">
       <input type="password" id="signupPassword" placeholder="Password">
-      <button type="button" onclick="signup(signupUsername.value, signupEmail.value, signupPassword.value)">
-        Sign Up
-      </button>
+      <button id="signupBtn" type="button">Sign Up</button>
     </div>
 
     <!-- LOGIN -->
@@ -27,10 +27,9 @@
       <h2>Login</h2>
       <input type="email" id="loginEmail" placeholder="Email">
       <input type="password" id="loginPassword" placeholder="Password">
-      <button type="button" onclick="login(loginEmail.value, loginPassword.value)">
-        Login
-      </button>
+      <button id="loginBtn" type="button">Login</button>
     </div>
   </div>
 </body>
+
 </html>
