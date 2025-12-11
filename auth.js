@@ -32,14 +32,14 @@ export const login = async (email, password) => {
   }
 };
 
-// PROTECT HOME PAGE
+// Protect home page
 onAuthStateChanged(auth, (user) => {
   if (!user && window.location.pathname.includes("home.html")) {
     window.location.href = "index.html";
   }
 });
 
-// Attach event listeners to buttons
+// Attach buttons to functions
 document.getElementById("signupBtn").addEventListener("click", () => {
   const username = document.getElementById("signupUsername").value;
   const email = document.getElementById("signupEmail").value;
